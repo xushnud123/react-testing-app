@@ -27,7 +27,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
     "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='src/components/**/*.{ts,tsx}' --collectCoverageFrom='!src/components/**/*.{types,stories,constants,test,spec}.{ts,tsx}'",
-    "prepare": "husky install" 
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -52,8 +52,13 @@
   "devDependencies": {
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-jest-dom": "^4.0.3",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.0",
     "msw": "^0.49.2",
-    "prettier": "2.8.3",
-    "husky": "^8.0.0"
+    "prettier": "2.8.3"
+  },
+  "lint-staged":{
+    "*.{ts,tsx}":["eslint"],
+    "*.{ts,tsx,css,scss}":["prettier"]
   }
 }
