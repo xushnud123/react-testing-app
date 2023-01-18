@@ -39,7 +39,7 @@ export const Application = () => {
             conditions
           </label>
         </div>
-        <button aria-hidden={true} disabled>
+        <button aria-hidden={true}>
           Submit
         </button>
       </form>
