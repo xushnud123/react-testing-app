@@ -23,7 +23,7 @@ describe("useCounter", () => {
   });
   test("decrement button", () => {
     const { result } = renderHook(useCounter);
-    act(() => result.current.decrement  ());
+    act(() => result.current.decrement());
     expect(result.current.count).toBe(-1);
   });
 });

@@ -10,6 +10,7 @@ describe("Application", () => {
     const pageHeading = screen.getByRole("heading", {
       level: 1,
     });
+
     expect(pageHeading).toBeInTheDocument();
 
     const sectionHeading = screen.getByRole("heading", {
@@ -18,7 +19,7 @@ describe("Application", () => {
     expect(sectionHeading).toBeInTheDocument();
 
     const paragraphElement = screen.getByText((content) =>
-      content.startsWith('All')
+      content.startsWith("All")
     );
     expect(paragraphElement).toBeInTheDocument();
 
@@ -64,7 +65,7 @@ describe("Application", () => {
     );
     expect(termsElement2).toBeInTheDocument();
 
-    const submitButtonElement = screen.getByRole("button", { hidden: true });
+    const submitButtonElement = screen.getByRole("button");
     expect(submitButtonElement).toBeInTheDocument();
   });
 });
