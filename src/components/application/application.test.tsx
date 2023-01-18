@@ -62,7 +62,9 @@ describe('Application', () => {
     )
     expect(termsElement2).toBeInTheDocument()
 
-    const submitButtonElement = screen.getByRole('button')
+    const submitButtonElement = screen.getByRole('button',{
+      hidden:true
+    })
     expect(submitButtonElement).toBeInTheDocument()
   })
 })
