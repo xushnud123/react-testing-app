@@ -44,5 +44,5 @@ export const Application = () => {
         </button>
       </form>
     </>
-  );
-};
+  )
+}

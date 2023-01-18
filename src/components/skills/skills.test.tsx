@@ -1,53 +1,53 @@
 /* eslint-disable testing-library/no-debugging-utils */
-import * as React from "react";
+import * as React from 'react'
 
-import { render, screen, logRoles } from "@testing-library/react";
-import { Skills } from "./skills";
+import { render, screen, logRoles } from '@testing-library/react'
+import { Skills } from './skills'
 
-describe("Skills", () => {
-  const skills = ["HTML", "CSS", "JavaScript"];
+describe('Skills', () => {
+  const skills = ['HTML', 'CSS', 'JavaScript']
 
-  test("renders correctly", () => {
-    render(<Skills skills={skills} />);
-    const listElement = screen.getByRole("list");
-    expect(listElement).toBeInTheDocument();
-  });
+  test('renders correctly', () => {
+    render(<Skills skills={skills} />)
+    const listElement = screen.getByRole('list')
+    expect(listElement).toBeInTheDocument()
+  })
 
-  test("renders a list of skills", () => {
-    render(<Skills skills={skills} />);
-    const listItemElements = screen.getAllByRole("listitem");
-    expect(listItemElements).toHaveLength(skills.length);
-  });
+  test('renders a list of skills', () => {
+    render(<Skills skills={skills} />)
+    const listItemElements = screen.getAllByRole('listitem')
+    expect(listItemElements).toHaveLength(skills.length)
+  })
 
-  test("renders Login button", () => {
-    render(<Skills skills={skills} />);
-    const loginButton = screen.getByRole("button", { name: "Login" });
+  test('renders Login button', () => {
+    render(<Skills skills={skills} />)
+    const loginButton = screen.getByRole('button', { name: 'Login' })
 
-    expect(loginButton).toBeInTheDocument();
-  });
+    expect(loginButton).toBeInTheDocument()
+  })
 
-  test("start Learning button is not rendered", () => {
-    render(<Skills skills={skills} />);
-    const startLearningButton = screen.queryByRole("button", {
-      name: "Start learning",
-    });
-    expect(startLearningButton).not.toBeInTheDocument();
-  });
+  test('start Learning button is not rendered', () => {
+    render(<Skills skills={skills} />)
+    const startLearningButton = screen.queryByRole('button', {
+      name: 'Start learning',
+    })
+    expect(startLearningButton).not.toBeInTheDocument()
+  })
 
-  test("oldin login keyin start lerning button chiqishini test qilamiz", async () => {
-    const view = render(<Skills skills={skills} />);
-    logRoles(view.container);
+  test('oldin login keyin start lerning button chiqishini test qilamiz', async () => {
+    const view = render(<Skills skills={skills} />)
+    logRoles(view.container)
     // screen.debug();
     const startLearningButton = await screen.findByRole(
-      "button",
+      'button',
       {
-        name: "Start learning",
+        name: 'Start learning',
       },
       {
         timeout: 2000,
       }
-    );
+    )
     // screen.debug();
-    expect(startLearningButton).toBeInTheDocument();
-  });
-});
+    expect(startLearningButton).toBeInTheDocument()
+  })
+})
